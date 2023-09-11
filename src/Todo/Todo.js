@@ -1,37 +1,33 @@
 import React, {useState} from 'react';
 
 
-// const ToDoItem = props => {
-//     const resolvedClass = {
-//         textDecoration : 'line-through'
-//     }
-//     return ()
-// }
-const Todolist = () => ({todo,handleChange,handleDelete,handleEdit}) => {
+
+
+const Todo = () => ({todo,handleChange,handleDelete,handleEdit}) => {
     const [edit, setEdit] = useState(false)
-    const [newTodo, setnewTodo] = useState('')
+    const [Todolist, setTodolist] = useState('')
 
     const handleRename = () => {
-        setnewTodo(todo.name)
+        setTodolist(todo.name)
         setEdit(true)
     }
 
 
-    const handleSave = () = {
-         setEdit( false)
-         setnewTodo('')
-         handleEdit(todo, newTodo)
+    const handleSave = (todo) = {
+         setEdit(false)
+         setTodolist('')
+         handleEdit(todo, Todolist)
     }
 
 
     return (
-        <div key={user.id} className={'user-wrapper'}>
+        <div key={todo.id} className={'user-wrapper'}>
             {!edit ?
-                <h2>{user.name}</h2>
+                <h2>{Todo.name}</h2>
                 :
                 <input
-                    value={newName}
-                    onChange={(e) => setNewName(e.target.value)}
+                    value={Todolist}
+                    onChange={(e) => setTodolist(e.target.value)}
                 />
             }
             <input
@@ -49,4 +45,4 @@ const Todolist = () => ({todo,handleChange,handleDelete,handleEdit}) => {
 };
 
 
-export default ToDoItem;
+export default Todo;
